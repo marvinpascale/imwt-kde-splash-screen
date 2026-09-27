@@ -9,10 +9,22 @@ mkdir -p ~/.local/share/plasma/look-and-feel/org.inmarvinwetrust.splash
 cp -a metadata.json contents ~/.local/share/plasma/look-and-feel/org.inmarvinwetrust.splash/
 ```
 
-Poi seleziona **In Marvin We Trust** in **Impostazioni di sistema → Aspetto → Splash screen**. In alternativa:
+Chiudi e riapri **Impostazioni di sistema** se era già aperto durante l'installazione. Poi vai in **Colori e temi → Schermata iniziale** (in alcune traduzioni **Splash screen**), scegli **In Marvin We Trust** e premi **Applica**. Puoi aprire direttamente il modulo con:
 
 ```bash
-ksplashqml --test org.inmarvinwetrust.splash
+kcmshell6 kcm_splashscreen
+```
+
+Per verificare che KDE riconosca il pacchetto:
+
+```bash
+kpackagetool6 --type Plasma/LookAndFeel --show org.inmarvinwetrust.splash
+```
+
+Per provare l'animazione:
+
+```bash
+ksplashqml org.inmarvinwetrust.splash --test
 ```
 
 Per disinstallare, elimina la cartella `~/.local/share/plasma/look-and-feel/org.inmarvinwetrust.splash` e seleziona un'altra splash screen nelle impostazioni.
